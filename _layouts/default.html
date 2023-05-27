@@ -11,162 +11,164 @@
 {% assign condensed_class = "" %}
 {%- endif -%}
 
-<body>
-  <main>
-    <section class="about bg-transparent">
-      <div class="about-header {{condensed_class}}">
-      <div class="about-title">
-      <a href="{{ "/" | relative_url}}">
-        {% if site.whoisclebs.profile_image_dark and site.whoisclebs.dark_mode %}
-        <img class="light" src="{{site.baseurl }}/{{ site.whoisclebs.profile_image }}" alt="{{ site.whoisclebs.name }}" />
-        <img class="dark" src="{{site.baseurl }}/{{ site.whoisclebs.profile_image_dark }}" alt="{{ site.whoisclebs.name }}" />
-        {% else %}
-        <img src="{{site.baseurl }}/{{ site.whoisclebs.profile_image }}" alt="{{ site.whoisclebs.name }}" />
-        {% endif %}
-      </a>
-      <h2>
-        <a class="bg-[#35D758] dark:text-slate-900 text-slate-900 m-6 border-5 border-[#35D758] rounded-tl-xl-sm rounded-tr-sm-xl rounded-bl-sm-xl rounded-br-xl-sm" href="{{ "/" | relative_url }}">{{ site.whoisclebs.name }}</a>
-      </h2>
-      </div>
-      {%- if site.whoisclebs.tagline -%}
-      <p class="tagline">{{ site.whoisclebs.tagline }}</p>
-      {%- endif -%}
-      </div>
-      {% capture footer %}
-      {%- if site.whoisclebs.social_links != '' -%}
-      {%- if site.whoisclebs.navigation -%}
-      <ul class="w-2/3 flex flex-col sm:flex-row mt-4 text-xl lg:flex-row lg:space-x-8 lg:mt-0 justify-center md:justify-between items-center">
-          <div class="flex flex-col md:flex-row md:space-x-4">
-            {% for link in site.whoisclebs.navigation %}
+<body >
+  <section class="dark:bg-[#332F3E]">
+    <main >
+      <section class="about bg-transparent">
+        <div class="about-header {{condensed_class}}">
+        <div class="about-title">
+        <a href="{{ "/" | relative_url}}">
+          {% if site.whoisclebs.profile_image_dark and site.whoisclebs.dark_mode %}
+          <img class="light" src="{{site.baseurl }}/{{ site.whoisclebs.profile_image }}" alt="{{ site.whoisclebs.name }}" />
+          <img class="dark" src="{{site.baseurl }}/{{ site.whoisclebs.profile_image_dark }}" alt="{{ site.whoisclebs.name }}" />
+          {% else %}
+          <img src="{{site.baseurl }}/{{ site.whoisclebs.profile_image }}" alt="{{ site.whoisclebs.name }}" />
+          {% endif %}
+        </a>
+        <h2>
+          <a class="bg-[#35D758] dark:text-slate-900 text-slate-900 m-6 border-5 border-[#35D758] rounded-tl-xl-sm rounded-tr-sm-xl rounded-bl-sm-xl rounded-br-xl-sm" href="{{ "/" | relative_url }}">{{ site.whoisclebs.name }}</a>
+        </h2>
+        </div>
+        {%- if site.whoisclebs.tagline -%}
+        <p class="tagline">{{ site.whoisclebs.tagline }}</p>
+        {%- endif -%}
+        </div>
+        {% capture footer %}
+        {%- if site.whoisclebs.social_links != '' -%}
+        {%- if site.whoisclebs.navigation -%}
+        <ul class="w-2/3 flex flex-col sm:flex-row mt-4 text-xl lg:flex-row lg:space-x-8 lg:mt-0 justify-center md:justify-between items-center">
+            <div class="flex flex-col md:flex-row md:space-x-4">
+              {% for link in site.whoisclebs.navigation %}
+              <li>
+                  <a href="{{ link.url }}" class="block py-2 pr-4 pl-3 text-gray-700 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">{{ link.title }}</a>
+              </li>
+              {% endfor %}
+            </div>
+            {%- if site.whoisclebs.dark_mode -%}
+            <label class="switch flex justify-center items-center">
+              <input type="checkbox" class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+              <span class="slider round" onclick="toggleDarkMode()"></span>
+            </label>
+            {%- endif -%}
+        </ul>
+        
+        {%- endif -%}
+        <ul class="social about-footer {{condensed_class}}">
+          {%- if site.whoisclebs.social_links.github -%}
+          <a href="https://github.com/{{ site.whoisclebs.social_links.github }}" target="_blank">
             <li>
-                <a href="{{ link.url }}" class="block py-2 pr-4 pl-3 text-gray-700 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">{{ link.title }}</a>
+              <i class="icon-github-circled"></i>
             </li>
-            {% endfor %}
-          </div>
-          {%- if site.whoisclebs.dark_mode -%}
-          <label class="switch flex justify-center items-center">
-            <input type="checkbox" class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
+          </a>
           {%- endif -%}
-      </ul>
-      
-      {%- endif -%}
-      <ul class="social about-footer {{condensed_class}}">
-        {%- if site.whoisclebs.social_links.github -%}
-        <a href="https://github.com/{{ site.whoisclebs.social_links.github }}" target="_blank">
-          <li>
-            <i class="icon-github-circled"></i>
-          </li>
-        </a>
+          {%- if site.whoisclebs.social_links.gitlab -%}
+          <a href="https://gitlab.com/{{ site.whoisclebs.social_links.gitlab }}" target="_blank">
+            <li>
+              <i class="icon-gitlab"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.linkedIn -%}
+          <a href="https://www.linkedin.com/{{ site.whoisclebs.social_links.linkedIn }}" target="_blank">
+            <li>
+              <i class="icon-linkedin-squared"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.twitter -%}
+          <a href="https://twitter.com/{{ site.whoisclebs.social_links.twitter }}" target="_blank">
+            <li>
+              <i class="icon-twitter-squared"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.instagram -%}
+          <a href="https://instagram.com/{{ site.whoisclebs.social_links.instagram }}" target="_blank">
+            <li>
+              <i class="icon-instagram"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.facebook -%}
+          <a href="https://facebook.com/{{ site.whoisclebs.social_links.facebook }}" target="_blank">
+            <li>
+              <i class="icon-facebook-squared"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.youtube -%}
+          <a href="https://youtube.com/{{ site.whoisclebs.social_links.youtube }}" target="_blank">
+            <li>
+              <i class="icon-youtube"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.pinterest -%}
+          <a href="https://pinterest.com/{{ site.whoisclebs.social_links.pinterest }}" target="_blank">
+            <li>
+              <i class="icon-pinterest-squared"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.dribbble -%}
+          <a href="https://dribbble.com/{{ site.whoisclebs.social_links.dribbble }}" target="_blank">
+            <li>
+              <i class="icon-dribbble"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.flickr -%}
+          <a href="https://flickr.com/{{ site.whoisclebs.social_links.flickr }}" target="_blank">
+            <li>
+              <i class="icon-flickr"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.telegram -%}
+          <a href=" https://t.me/{{ site.whoisclebs.social_links.telegram }}" target="_blank">
+            <li>
+              <i class="icon-telegram"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.soundcloud -%}
+          <a href=" https://soundcloud.com/{{ site.whoisclebs.social_links.soundcloud }}" target="_blank">
+            <li>
+              <i class="icon-soundcloud"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.email -%}
+          <a href="mailto:{{ site.whoisclebs.social_links.email }}" target="_blank">
+            <li>
+              <i class="icon-mail-alt"></i>
+            </li>
+          </a>
+          {%- endif -%}
+          {%- if site.whoisclebs.social_links.stackoverflow -%}
+          <a href="https://stackoverflow.com/users/{{ site.whoisclebs.social_links.stackoverflow }}" target="_blank">
+            <li>
+              <i class="icon-stack-overflow"></i>
+            </li>
+          </a>
+          {%- endif -%}
+        </ul>
         {%- endif -%}
-        {%- if site.whoisclebs.social_links.gitlab -%}
-        <a href="https://gitlab.com/{{ site.whoisclebs.social_links.gitlab }}" target="_blank">
-          <li>
-            <i class="icon-gitlab"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.linkedIn -%}
-        <a href="https://www.linkedin.com/{{ site.whoisclebs.social_links.linkedIn }}" target="_blank">
-          <li>
-            <i class="icon-linkedin-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.twitter -%}
-        <a href="https://twitter.com/{{ site.whoisclebs.social_links.twitter }}" target="_blank">
-          <li>
-            <i class="icon-twitter-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.instagram -%}
-        <a href="https://instagram.com/{{ site.whoisclebs.social_links.instagram }}" target="_blank">
-          <li>
-            <i class="icon-instagram"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.facebook -%}
-        <a href="https://facebook.com/{{ site.whoisclebs.social_links.facebook }}" target="_blank">
-          <li>
-            <i class="icon-facebook-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.youtube -%}
-        <a href="https://youtube.com/{{ site.whoisclebs.social_links.youtube }}" target="_blank">
-          <li>
-            <i class="icon-youtube"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.pinterest -%}
-        <a href="https://pinterest.com/{{ site.whoisclebs.social_links.pinterest }}" target="_blank">
-          <li>
-            <i class="icon-pinterest-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.dribbble -%}
-        <a href="https://dribbble.com/{{ site.whoisclebs.social_links.dribbble }}" target="_blank">
-          <li>
-            <i class="icon-dribbble"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.flickr -%}
-        <a href="https://flickr.com/{{ site.whoisclebs.social_links.flickr }}" target="_blank">
-          <li>
-            <i class="icon-flickr"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.telegram -%}
-        <a href=" https://t.me/{{ site.whoisclebs.social_links.telegram }}" target="_blank">
-          <li>
-            <i class="icon-telegram"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.soundcloud -%}
-        <a href=" https://soundcloud.com/{{ site.whoisclebs.social_links.soundcloud }}" target="_blank">
-          <li>
-            <i class="icon-soundcloud"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.email -%}
-        <a href="mailto:{{ site.whoisclebs.social_links.email }}" target="_blank">
-          <li>
-            <i class="icon-mail-alt"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.whoisclebs.social_links.stackoverflow -%}
-        <a href="https://stackoverflow.com/users/{{ site.whoisclebs.social_links.stackoverflow }}" target="_blank">
-          <li>
-            <i class="icon-stack-overflow"></i>
-          </li>
-        </a>
-        {%- endif -%}
-      </ul>
-      {%- endif -%}
-      {% endcapture %}
-      {{ footer }}
-    </section>
-    <section class="content">
-      {{ content }}
-    </section>
-  </main>
-  <footer class="{{condensed_class}}">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Feito com ❤️ e Jekyll.</span>
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="{{ "/" | relative_url}}" class="hover:underline">WhoIsclebs</a>. Alguns direitos reservados.</span>
-    </div>
-  </footer>
+        {% endcapture %}
+        {{ footer }}
+      </section>
+      <section class="content">
+        {{ content }}
+      </section>
+    </main>
+    <footer class="{{condensed_class}}">
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Feito com ❤️ e Jekyll.</span>
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="{{ "/" | relative_url}}" class="hover:underline">WhoIsclebs</a>. Alguns direitos reservados.</span>
+      </div>
+    </footer>
+  </section>
   {% if site.whoisclebs.dark_mode %}
   <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
   {% endif %}
