@@ -1,0 +1,17 @@
+{
+  "name": "whoisclebs",
+  "version": "0.0.1",
+  "description": "Simplistic jekyll portfolio-style theme for writers.",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "whoisclebs",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  }
+}
