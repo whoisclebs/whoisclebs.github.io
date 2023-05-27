@@ -26,12 +26,12 @@ whoisclebs:
     - post
   # generate social links in footer
   social_links:
-    twitter: samarsault
-    github:  samarsault
-    linkedIn: in/samarsault
+    twitter: whoisclebs
+    github:  whoisclebs
+    linkedIn: in/whoisclebs
     #dribbble: jekyll
     #flickr:   jekyll
-    #instagram: jekyll
+    instagram: whoisclebs
     #pinterest: jekyll
     #youtube: jekyll
     #facebook: jekyll
