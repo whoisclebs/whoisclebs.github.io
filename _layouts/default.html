@@ -34,6 +34,23 @@
       </div>
       {% capture footer %}
       {%- if site.whoisclebs.social_links != '' -%}
+      {%- if site.whoisclebs.navigation -%}
+      <ul class="w-1/2 flex flex-col sm:flex-row mt-4 text-xl	lg:flex-row lg:space-x-8 lg:mt-0 justify-center md:justify-between items-center">
+          <div class="flex flex-col md:flex-row md:space-x-4">
+            {% for link in site.whoisclebs.navigation %}
+            <li>
+                <a href="{{ link.url }}" class="block py-2 pr-4 pl-3 text-gray-700 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </div>
+          {%- if site.whoisclebs.dark_mode -%}
+          <label class="switch flex justify-center items-center">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+          {%- endif -%}
+      </ul>
+      {%- endif -%}
       <ul class="social about-footer {{condensed_class}}">
         {%- if site.whoisclebs.social_links.github -%}
         <a href="https://github.com/{{ site.whoisclebs.social_links.github }}" target="_blank">
@@ -134,29 +151,6 @@
         </a>
         {%- endif -%}
       </ul>
-      {%- endif -%}
-      {%- if site.whoisclebs.navigation -%}
-      <nav class="navigation about-footer {{condensed_class}}">
-        <ul>
-          {% for link in site.whoisclebs.navigation %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-      {%- endif -%}
-
-      {%- if site.whoisclebs.dark_mode -%}
-      <div class="about-footer {{condensed_class}}">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
-      </div>
       {%- endif -%}
       {% endcapture %}
       {{ footer }}

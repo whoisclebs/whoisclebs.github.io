@@ -17,24 +17,31 @@ sass:
 whoisclebs:
   name: Clebson Augusto
   tagline: Software engineer
-  date_format: "%b %-d, %Y"
+  date_format: "%d- %b, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
   profile_image: "assets/profile.png" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "pt-BR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
+  navigation:
+    - title: "Blog"
+      url: "/"
+    - title: "Sobre"
+      url: "/"
+    - title: "Work"
+      url: "/"  
   condensed_mobile:
     #- home
     - page
     - post
   # generate social links in footer
   social_links:
-    twitter: whoisclebs
-    github:  whoisclebs
-    linkedIn: in/whoisclebs
+    # twitter: whoisclebs
+    # github:  whoisclebs
+    # linkedIn: in/whoisclebs
     #dribbble: jekyll
     #flickr:   jekyll
-    instagram: whoisclebs
+    # instagram: whoisclebs
     #pinterest: jekyll
     #youtube: jekyll
     #facebook: jekyll
@@ -52,8 +59,8 @@ whoisclebs:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+header_pages:
+ - index.md
 
 # Build settings
 theme: whoisclebs

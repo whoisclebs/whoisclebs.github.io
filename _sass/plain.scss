@@ -46,7 +46,6 @@ h2 {
 }
 main {
   margin: 0 90px;
-  display: flex;
   height: 100%;
 
   @media screen and (min-width: $bigScreenW) {
@@ -70,25 +69,17 @@ main {
 
   .content {
     @media screen and (min-width: $mobileW + 1) {
-      max-width: calc(100% - #{$leftWidth});
-      margin-left: $leftWidth;
       width: 100%;
     }
   }
   .about {
     display: flex;
-    height: 100vh;
-    padding-bottom: 15vh;
     @media screen and (max-width: $mobileW) {
       height: auto;
-      padding: 5vh 30px;
     }
     @media screen and (max-width: $smallMobileW) {
-      padding: 5vh 20px;
     }
     @media screen and (min-width: $mobileW + 1) {
-      position: fixed;
-      max-width: 280px;
     }
     min-width: $leftWidth;
     justify-content: center;
