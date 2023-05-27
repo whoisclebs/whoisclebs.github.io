@@ -296,9 +296,7 @@ table {
   }
 }
 
-footer {
-  display: none;
-}
+
 @media screen and (max-width: $mobileW) {
   .about {
     .about-header.condensed {
@@ -319,20 +317,9 @@ footer {
         margin-bottom: 0px;
       }
     }
-    .about-footer.condensed {
-      display: none;
-    }
+
   }
-  footer.condensed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 40px;
-    @media screen and (max-width: $smallMobileW){
-      margin: 0 20px;
-    }
-    border-top: 1px solid #eee;
-  }
+
 }
 .border-5 {
   border-width: 5px;

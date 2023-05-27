@@ -13,7 +13,7 @@
 
 <body>
   <main>
-    <section class="about">
+    <section class="about bg-transparent">
       <div class="about-header {{condensed_class}}">
       <div class="about-title">
       <a href="{{ "/" | relative_url}}">
@@ -164,10 +164,14 @@
     <section class="content">
       {{ content }}
     </section>
-    <footer class="{{condensed_class}}">
-      {{ footer }}
-    </footer>
   </main>
+  <footer class="{{condensed_class}}">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Feito com ❤️ e Jekyll.</span>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="{{ "/" | relative_url}}" class="hover:underline">WhoIsclebs</a>. Alguns direitos reservados.</span>
+    </div>
+  </footer>
   {% if site.whoisclebs.dark_mode %}
   <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
   {% endif %}
