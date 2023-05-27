@@ -1,10 +1,13 @@
-title: Your awesome title
-author: GitHub User
-email: your-email@domain.com
+title: Clebson Augusto Fonseca
+author: whoisclebs
+email: clebs.talks@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Bem-vindo ao WhoisClebs.Space, sua porta de entrada para o mundo 
+  da tecnologia. Explore nosso blog e descubra histórias cativantes, 
+  artigos esclarecedores e dicas práticas que unem a engenharia de 
+  software ao desenvolvimento de produtos e soluções inovadoras. 
+  Junte-se à nossa comunidade vibrante enquanto desvendamos os 
+  segredos para o sucesso no cenário digital. 
 show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -19,7 +22,7 @@ whoisclebs:
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
   profile_image: "assets/profile.png" # the path from the base directory of the site to the image to display (no / at the start)
-  html_lang: "en" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
+  html_lang: "pt-BR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
     #- home
     - page
