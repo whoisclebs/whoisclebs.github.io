@@ -18,6 +18,7 @@ whoisclebs:
   name: Clebson Augusto
   tagline: Software engineer
   date_format: "%d de %b, %Y"
+  disqus_shortname: "whoisclebs"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
@@ -28,13 +29,21 @@ whoisclebs:
       url: "/"
     - title: "Sobre"
       url: "/sobre"
+    - title: "Repositorios"
+      url: "/repositorios" 
     - title: "Curriculo"
-      url: "/curriculum"  
+      url: "/curriculum"
   condensed_mobile:
     #- home
     - page
     - post
   # generate social links in footer
+  social:
+    github: whoisclebs
+  repositories:
+    - universi-me/universi-front
+    - whoisclebs/c4-plantuml-editor
+
   social_links:
     # twitter: whoisclebs
     # github:  whoisclebs
