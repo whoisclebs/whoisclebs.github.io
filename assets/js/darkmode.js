@@ -1,4 +1,4 @@
-function toggleDarkMode() {
+function toggleDarkModeBtn() {
     const DARK_CLASS = 'dark';
 
     var body = document.querySelector("body");
@@ -24,13 +24,13 @@ function setCookie(name, value, days) {
 function deleteCookie(name) { setCookie(name, '', -1); }
 
 
-const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+let userPrefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 var theme = getCookie('theme');
-if ( (theme === null && userPrefersDark) || theme === 'dark') {
+if ( (theme === null && userPrefersDarkMode) || theme === 'dark') {
     var checkDarkDone = false;
     function checkDark() {
         if (!checkDarkDone) {
-            toggleDarkMode();
+            toggleDarkModeBtn();
         }
         checkDarkDone = true;
     };

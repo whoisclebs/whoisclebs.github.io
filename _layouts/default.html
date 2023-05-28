@@ -29,15 +29,14 @@
           <a class="bg-[#35D758] dark:text-slate-900 text-slate-900 m-6 border-5 border-[#35D758] rounded-tl-xl-sm rounded-tr-sm-xl rounded-bl-sm-xl rounded-br-xl-sm" href="{{ "/" | relative_url }}">{{ site.whoisclebs.name }}</a>
         </h2>
         {%- if site.whoisclebs.tagline -%}
-        <p class="tagline pt-2">{{ site.whoisclebs.tagline }}</p>
+        <small class="ml-2 font-semibold text-gray-500 dark:text-gray-400">{{ site.whoisclebs.tagline }}</small>
         {%- endif -%}
         </div>
-
         </div>
         {% capture footer %}
         {%- if site.whoisclebs.social_links != '' -%}
         {%- if site.whoisclebs.navigation -%}
-        <ul class="w-2/3 flex flex-col sm:flex-row mt-4 text-xl lg:flex-row lg:space-x-8 lg:mt-0 justify-center md:justify-between items-center">
+        <ul class="w-11/12 flex flex-col sm:flex-row mt-4 text-xl lg:flex-row lg:space-x-8 lg:mt-0 justify-center md:justify-between items-center">
             <div class="flex flex-col md:flex-row md:space-x-4">
               {% for link in site.whoisclebs.navigation %}
               <li>
@@ -48,7 +47,7 @@
             {%- if site.whoisclebs.dark_mode -%}
             <label class="switch flex justify-center items-center">
               <input type="checkbox" class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-              <span class="slider round" onclick="toggleDarkMode()"></span>
+              <span class="slider round" onclick="toggleDarkModeBtn()"></span>
             </label>
             {%- endif -%}
         </ul>
@@ -188,6 +187,12 @@
   <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
   {% endif %}
+  <script>
+    console.info("%c👀 Além de olhar os meus console.log, vem olhar o meu linkedin: \nhttps://linkedin.com/in/whoisclebs","color: #35D751")
+  </script>
+  <% if site.whoisclebs.buy_me_a_coffee %>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="whoisclebs" data-description="Support me on Buy me a coffee!" data-message="Obrigado por estar visitando o meu espaço! Caso queira contribuir de alguma forma, você pode me ajudar a comprar alguns livros." data-color="#35D751" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  <% endif %>
 </body>
 
 </html>
