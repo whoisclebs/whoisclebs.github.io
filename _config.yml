@@ -23,6 +23,7 @@ whoisclebs:
   search: true # set to true to enable searchbar
   dark_mode: false # set to true to add dark mode toggle
   buy_me_a_coffee: true
+  analytics_id: UA-268981168-1
   profile_image: "assets/profile.png" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "pt-BR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   navigation:
