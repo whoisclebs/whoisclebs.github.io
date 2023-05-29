@@ -164,7 +164,7 @@
     <footer class="{{condensed_class}}">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Feito com ❤️ e Jekyll.</span>
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Feito com ❤️ e Jekyll. </span>
           <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="{{ "/" | relative_url}}" class="hover:underline">WhoIsclebs</a>. Alguns direitos reservados.</span>
       </div>
     </footer>
@@ -190,9 +190,9 @@
   <script>
     console.info("%c👀 Além de olhar os meus console.log, vem olhar o meu linkedin: \nhttps://linkedin.com/in/whoisclebs","color: #35D751")
   </script>
-  <% if site.whoisclebs.buy_me_a_coffee %>
-  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="whoisclebs" data-description="Support me on Buy me a coffee!" data-message="Obrigado por estar visitando o meu espaço! Caso queira contribuir de alguma forma, você pode me ajudar a comprar alguns livros." data-color="#35D751" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-  <% endif %>
+  {%- if site.whoisclebs.buy_me_a_coffee -%}
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="whoisclebs" data-description="Support me on Buy me a coffee!" data-message="Obrigado por estar visitando o meu espaço! Caso queira contribuir de alguma forma, você pode me ajudar a comprar alguns livros." data-color="#35D751" data-position="Right" data-x_margin="18" data-y_margin="16"></script>
+  {%- endif -%}
 </body>
 
 </html>
