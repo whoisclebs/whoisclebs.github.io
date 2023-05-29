@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /sobre
 ---
 
 <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Olá, me chamo <span class="text-[#35D758] dark:text-[#35D758]">Clebson Augusto Fonseca</span>.</h1>

@@ -9,9 +9,10 @@ description: > # this means to ignore newlines until "show_exerpts:"
   Junte-se à nossa comunidade vibrante enquanto desvendamos os 
   segredos para o sucesso no cenário digital. 
 show_excerpts: true # set to true to show excerpts on the homepage
-
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+collections:
+  pages:
+    output: true
+    permalink: /:path
 sass:
   sass_dir: _sass
 whoisclebs:
